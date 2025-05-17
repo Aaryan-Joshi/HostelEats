@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f3f9f1;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav .logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.4em;
+}
+
+/* Menu Section */
+.menu-section {
+    padding: 50px 20px;
+    text-align: center;
+    color: #333;
+}
+
+.menu-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.menu-card {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31,38,135,0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    width: 220px;
+    padding: 15px;
+    text-align: center;
+    color: #000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.menu-card h3 {
+    margin: 10px 0 5px 0;
+}
+
+.menu-card p {
+    font-weight: bold;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Order Form Section */
+.order-section {
+    padding: 50px 20px;
+    text-align: center;
+    color: #333;
+}
+
+.order-section h2 {
+    font-size: 2.3em;
+    margin-bottom: 20px;
+}
+
+.order-section form {
+    display: inline-block;
+    padding: 30px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31,38,135,0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.order-section input, 
+.order-section button {
+    display: block;
+    width: 250px;
+    margin: 15px auto;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+}
+
+.order-section input {
+    background: rgba(255,255,255,0.8);
+}
+
+.order-section button {
+    background: #333;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.order-section button:hover {
+    background: #555;
+}
+
+/* Success Message Styling */
+.success-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px 30px;
+    border-radius: 15px;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    z-index: 999;
+}
+
+.success-message h2 {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+/* Return Button Styling */
+.return-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 24px;
+    background-color: #ffd700;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.return-button:hover {
+    background-color: #ffbb00;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    padding: 15px;
+    background: rgba(0,0,0,0.8);
+    text-align: center;
+    color: white;
+}

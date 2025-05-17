@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HostelEats - Home Food Delivery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">HostelEats 🍽️</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#order">Order</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Delicious Food Delivered To Your Room</h1>
+            <p>Fresh, Hot, and Tasty — Straight from our kitchen to your hostel!</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <h2>Today's Specials</h2>
+        <div class="menu-items">
+            <!-- Regular Menu Items -->
+            <div class="menu-card">
+                <img src="images/pizza.jpg" alt="Pizza">
+                <h3>Cheese Pizza</h3>
+                <p>₹120</p>
+            </div>
+            <div class="menu-card">
+                <img src="images/burger.jpg" alt="Burger">
+                <h3>Veg Burger</h3>
+                <p>₹80</p>
+            </div>
+            <div class="menu-card">
+                <img src="images/pasta.jpg" alt="Pasta">
+                <h3>Masala Pasta</h3>
+                <p>₹100</p>
+            </div>
+            <!-- Indian Dishes -->
+            <div class="menu-card">
+                <img src="images/paneer_masala.jpg" alt="Paneer Butter Masala">
+                <h3>Paneer Butter Masala</h3>
+                <p>₹150</p>
+            </div>
+            <div class="menu-card">
+                <img src="images/biryani.jpg" alt="Biryani">
+                <h3>Veg Biryani</h3>
+                <p>₹180</p>
+            </div>
+            <div class="menu-card">
+                <img src="images/aloo_paratha.jpg" alt="Aloo Paratha">
+                <h3>Aloo Paratha</h3>
+                <p>₹60</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order" class="order-section">
+        <h2>Place Your Order</h2>
+        <form action="order.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="text" name="room" placeholder="Room Number" required>
+            <input type="text" name="food" placeholder="Food Item" required>
+            <input type="text" name="address" placeholder="Delivery Address" required>
+            <input type="text" name="hostel_name" placeholder="Hostel Name" required>
+            <input type="text" name="phone_number" placeholder="Phone Number" required>
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2025 HostelEats | Designed with ❤️ for Hostel Students</p>
+    </footer>
+
+</body>
+</html>
