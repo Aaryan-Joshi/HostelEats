@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HostelEats</title>
+    <link rel="stylesheet" href="{% static 'menu/style.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="logo">HostelEats</div>
+        <ul>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#order">Order</a></li>
+            <li><a href="{% url 'view_cart' %}">Cart</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to HostelEats!</h1>
+            <p>Order delicious hostel meals delivered to your dorm fast.</p>
+        </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-items">
+            {% for item in menu_items %}
+            <div class="menu-card">
+                <img src="{{ item.image.url }}" alt="{{ item.name }}">
+                <h3>{{ item.name }}</h3>
+                <p>{{ item.description }}</p>
+                <p>₹{{ item.price }}</p>
+                <form method="POST" action="{% url 'add_to_cart' item.id %}">
+                    {% csrf_token %}
+                    <input type="number" name="quantity" value="1" min="1" style="width: 60px;">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="order-section" id="order">
+        <h2>Place Your Order</h2>
+        <form id="orderForm" method="POST" action="{% url 'checkout' %}">
+            {% csrf_token %}
+            <input type="text" name="customer_name" placeholder="Your Name" required>
+            <input type="tel" name="phone_number" placeholder="Phone Number" required>
+            <input type="text" name="hostel_name" placeholder="Hostel Name" required>
+            <input type="text" name="room_number" placeholder="Room Number" required>
+            <button type="submit">Checkout Now</button>
+        </form>
+        {% if success %}
+        <div id="orderSuccess" class="success-message">
+            <h2>Order Placed Successfully!</h2>
+            <a href="#" class="return-button" onclick="closeMessage()">Return to Home</a>
+        </div>
+        {% endif %}
+    </section>
+    <script src="{% static 'menu/script.js' %}"></script>
+</body>
+</html>
